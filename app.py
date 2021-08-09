@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
@@ -6,12 +6,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return render_template('index.html')
+    return render_template('abc.html')
 
 @app.route('/model1',methods=['POST'])
 def model1():
     model = pickle.load(open('Model_Jay.pkl', 'rb'))
-    final_data = np.array([[129.84,1433.99,0.00,4000.0,1363.13,141.65,0.88]])
+    # final_data = np.array([[129.84,1433.99,0.00,4000.0,1363.13,141.65,0.88]])
+    final_data = [np.array([x for x in request.form.values()])]
     prediction = model.predict(final_data)
 
     if (prediction[0] == 0):
@@ -25,7 +26,7 @@ def model1():
     else:
         response = "Error"
 
-    return render_template('index.html', output=f'Belongs to cluster {response}')
+    return render_template('abc.html', output=f'Belongs to cluster {response}')
 
 @app.route('/model2',methods=['POST'])
 def model2():

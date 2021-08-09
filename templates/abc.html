@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Credit Card Customer Segmentation</title>
+</head>
+
+<style>
+    .titlestyle {
+        background-color: rgb(211, 248, 255);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .title {
+        background-color: rgb(255, 226, 255);
+        text-align: center;
+    }
+
+    .formstyle {
+        padding: 20px 20px;
+    }
+</style>
+
+<body class="bg-light">
+    <main class="container size">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <div class="d-flex align-items-center p-3 my-3 rounded shadow-sm titlestyle">
+                <div class="lh-1">
+                    <h1 class="h2 mb-0 text-black lh-1">Credit Card Customer Segmentation - Packt, Team Epic</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-control title">Model 1</div>
+                        <form class="formstyle" action="{{ url_for('model1')}}" method="post">
+
+                            <div class="input-group mb-3">
+                                <span>Balance</span>
+                                <input type="text" name="BALANCE" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Purchases</span>
+                                <input type="text" name="PURCHASES" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Cash advance</span>
+                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Credit limit</span>
+                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Payment</span>
+                                <input type="text" name="PAYMENTS" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Minimum payment</span>
+                                <input type="text" name="MINIMUM_PAYMENTS" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Percent full payment</span>
+                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required">
+                            </div>
+                            <button type="submit" class="btn btn-primary ">Predict</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <div class="form-control title">Model 2</div>
+                        <form class="formstyle" action="{{ url_for('model2')}}" method="post">
+
+                            <div class="input-group mb-3">
+                                <span>Balance</span>
+                                <input type="text" name="BALANCE" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Purchases</span>
+                                <input type="text" name="PURCHASES" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Installments Purchases</span>
+                                <input type="text" name="INSTALLMENTS_PURCHASES" class="form-control"
+                                    required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Cash Advanced</span>
+                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Credit Limit</span>
+                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Payment</span>
+                                <input type="text" name="PAYMENTS" class="form-control" required="required">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span>Percent full payment</span>
+                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Predict</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
