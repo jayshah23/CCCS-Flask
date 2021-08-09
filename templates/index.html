@@ -5,25 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Jay!!</title>
+    <title>Hello!!</title>
 </head>
 
 <body>
     <div class="container">
         <h3>Welcome to credit card customer segmentation</h3>
-        <form method="POST" action="{{ url_for('model1')}}">
-            <input type="text" name="BALANCE" placeholder="BALANCE" />
-            <input type="text" name="ONEOFF_PURCHASES" placeholder="ONEOFF_PURCHASES" />
-            <input type="text" name="PURCHASES_INSTALLMENTS_FREQUENCY" placeholder="PURCHASES_INSTALLMENTS_FREQUENCY" />
-            <input type="text" name="CASH_ADVANCE_TRX" placeholder="CASH_ADVANCE_TRX" />
-            <input type="text" name="PURCHASES_TRX" placeholder="PURCHASES_TRX" />
-            <input type="text" name="CREDIT_LIMIT" placeholder="CREDIT_LIMIT" />
-            <input type="text" name="PAYMENTS" placeholder="PAYMENTS" />
-            <input type="text" name="PRC_FULL_PAYMENT" placeholder="PRC_FULL_PAYMENT" />
-            <input type="text" name="TOTAL_TXN" placeholder="TOTAL_TXN" />
-            <button type="submit">Model 1 - Jay</button>
-        </form>
-        <span>{{output}}</span>
+        <div class="row">
+            <form class="col-lg-6" method="POST" action="{{ url_for('model1')}}">
+                <input type="text" name="BALANCE" placeholder="BALANCE" />
+                <input type="text" name="ONEOFF_PURCHASES" placeholder="ONEOFF_PURCHASES" />
+                <input type="text" name="PURCHASES_INSTALLMENTS_FREQUENCY" placeholder="PURCHASES_INSTALLMENTS_FREQUENCY" />
+                <input type="text" name="CASH_ADVANCE_TRX" placeholder="CASH_ADVANCE_TRX" />
+                <input type="text" name="PURCHASES_TRX" placeholder="PURCHASES_TRX" />
+                <input type="text" name="CREDIT_LIMIT" placeholder="CREDIT_LIMIT" />
+                <input type="text" name="PAYMENTS" placeholder="PAYMENTS" />
+                <input type="text" name="PRC_FULL_PAYMENT" placeholder="PRC_FULL_PAYMENT" />
+                <input type="text" name="TOTAL_TXN" placeholder="TOTAL_TXN" />
+                <button type="submit">Model 1</button>
+            </form>
+            <form class="col-lg-6" method="POST" action="{{ url_for('model2')}}">
+                <input type="text" name="BALANCE" placeholder="BALANCE" />
+                <input type="text" name="ONEOFF_PURCHASES" placeholder="ONEOFF_PURCHASES" />
+                <input type="text" name="PURCHASES_INSTALLMENTS_FREQUENCY" placeholder="PURCHASES_INSTALLMENTS_FREQUENCY" />
+                <input type="text" name="CASH_ADVANCE_TRX" placeholder="CASH_ADVANCE_TRX" />
+                <input type="text" name="PURCHASES_TRX" placeholder="PURCHASES_TRX" />
+                <input type="text" name="CREDIT_LIMIT" placeholder="CREDIT_LIMIT" />
+                <input type="text" name="PAYMENTS" placeholder="PAYMENTS" />
+                <input type="text" name="PRC_FULL_PAYMENT" placeholder="PRC_FULL_PAYMENT" />
+                <input type="text" name="TOTAL_TXN" placeholder="TOTAL_TXN" />
+                <button type="submit">Model 2</button>
+            </form>
+        </div>
+        <div>
+            <b>Prediction: </b><span>{{output}}</span>
+        </div>
     </div>
 </body>
 
