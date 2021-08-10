@@ -26,15 +26,27 @@ def model1():
     else:
         response = "Error"
 
-    return render_template('abc.html', output=f'Belongs to cluster {response}')
+    return render_template('abc.html', output=f'{response}')
 
 @app.route('/model2',methods=['POST'])
 def model2():
-    model = pickle.load(open('modelR.pkl', 'rb'))
-    final_data = np.array([[1854.03,576.00,0.33,5,15,2000.0,654.47,0.00,20]])
+    model = pickle.load(open('model_JINI.pkl', 'rb'))
+    final_data = np.array([[3049.22,1.00,390.00,390.00,0.00,5876.87,9,1,3200.0,6537.91,2729.08,0.00,12]])
+    # final_data = [np.array([x for x in request.form.values()])]
     prediction = model.predict(final_data)
 
-    return render_template('index.html', output=f'Belongs to cluster {prediction}')
+    if (prediction[0] == 0):
+        response = "Their Balance is very less but still they purchase without taking much cash advance and prefer installments to do the purchases.They make sure to repay the intallments on time. \nBusiness Insights : These are good customers and even with less balance are managing to purchase So we should give them schemes where they can have discounts on some expensive products so that they are attracted to buy more stuff since they are frequent buyers.They are quite a number of people in this group so the company should definitely focus more on them."
+    elif (prediction[0] == 1):
+        response = "They are rich people with a lot of balance but not frquent buyers.Even with a lot of balance they still take a lot of cash advance to purchase suggesting that they buy expensive items.They are new customers and a few in quantity. \nBusiness Insights: In order to make them shell their money we need to provide them schemes for expensive items as well as the ordinary ones which they are not buying using the credit card. If through the schemes they can spend money on that as well then they have the capacity to bring a lot of profit."
+    elif (prediction[0] == 2):
+        response = "These are the cream customers who have been for a long time now and even do a lot of purachases. They take minimal cash adance and installments to do purchases.They even have a good balance and can afford their buy. \nBuisness Insights : Make sure not to lose them."
+    elif (prediction[0] == 3):
+        response = "Their balance is less and dont do purchases.They only buy the necessities and dont take the cash advance and installments to do so.they are a lot in number and have also been there for a good time. \nBusiness Insights: Focus a lot on them as they are a lot in number and aren't giving much profits.Come up with the schhemes that make them comfortable to make purchases in installments and by taking cash advances."
+    else:
+        response = "Error"
+
+    return render_template('abc.html', output=f'Belongs to cluster {response}')
 
 if __name__ == "__main__":
     app.run(debug=True)

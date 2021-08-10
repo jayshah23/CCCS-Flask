@@ -15,27 +15,50 @@
 
 <style>
     .titlestyle {
-        background-color: rgb(211, 248, 255);
+
         justify-content: center;
         text-align: center;
     }
 
     .title {
-        background-color: rgb(255, 226, 255);
         text-align: center;
     }
 
     .formstyle {
         padding: 20px 20px;
     }
+
+    .mr-2 {
+        margin-right: 20px;
+    }
+
+    .bgimg {
+        background-image: url(../static/download2.jpg);
+        height: max-content;
+        width: 100%;
+        background-repeat: no-repeat;
+        opacity: 1.5;
+        background-size: cover;
+    }
+
+    .txtwhite {
+        border-color: white;
+        color: white;
+    }
+
+    .border {
+        border: 1px solid white !important;
+    }
 </style>
 
 <body class="bg-light">
     <main class="container size">
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <!-- <img src="../static/download.jpg" alt=""> -->
+        <div class="my-3 p-3 bg-body rounded shadow-sm bgimg">
             <div class="d-flex align-items-center p-3 my-3 rounded shadow-sm titlestyle">
                 <div class="lh-1">
-                    <h1 class="h2 mb-0 text-black lh-1">Credit Card Customer Segmentation - Packt, Team Epic</h1>
+                    <h1 class="h2 mb-0 text-black lh-1 txtwhite">Credit Card Customer Segmentation - Packt, Team Epic
+                    </h1>
                 </div>
             </div>
             <div class="container">
@@ -44,39 +67,52 @@
                         <div class="form-control title">Model 1</div>
                         <form class="formstyle" action="{{ url_for('model1')}}" method="post">
 
-                            <div class="input-group mb-3">
-                                <span>Balance</span>
-                                <input type="text" name="BALANCE" class="form-control" required="required">
+                            <div class="input-group mb-3 mr-2">
+                                <span class="txtwhite">Balance</span>
+                                <input type="text" name="BALANCE" class="form-control border" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Enter balance here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Purchases</span>
-                                <input type="text" name="PURCHASES" class="form-control" required="required">
+                                <span class="txtwhite">Purchases</span>
+                                <input type="text" name="PURCHASES" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Purchase">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Cash advance</span>
-                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required">
+                                <span class="txtwhite">Cash advance</span>
+                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Enter Cash Advance">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Credit limit</span>
-                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required">
+                                <span class="txtwhite">Credit limit</span>
+                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Enter Credit Limit">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Payment</span>
-                                <input type="text" name="PAYMENTS" class="form-control" required="required">
+                                <span class="txtwhite">Payment</span>
+                                <input type="text" name="PAYMENTS" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Enter Payment here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Minimum payment</span>
-                                <input type="text" name="MINIMUM_PAYMENTS" class="form-control" required="required">
+                                <span class="txtwhite">Minimum payment</span>
+                                <input type="text" name="MINIMUM_PAYMENTS" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Enter Minimum Payment here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Percent full payment</span>
-                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required">
+                                <span class="txtwhite">Percent full payment</span>
+                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;"
+                                    placeholder="Percent Full Payment">
                             </div>
                             <button type="submit" class="btn btn-primary ">Predict</button>
                         </form>
@@ -85,43 +121,83 @@
                         <div class="form-control title">Model 2</div>
                         <form class="formstyle" action="{{ url_for('model2')}}" method="post">
 
-                            <div class="input-group mb-3">
-                                <span>Balance</span>
-                                <input type="text" name="BALANCE" class="form-control" required="required">
+                            <div class="input-group mb-3 mr-2">
+                                <span class="txtwhite">Balance</span>
+                                <input type="text" name="BALANCE" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter balance here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Purchases</span>
-                                <input type="text" name="PURCHASES" class="form-control" required="required">
+                                <span class="txtwhite">Balance Frequency</span>
+                                <input type="text" name="BALANCE_FREQUENCY" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Purchase">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Installments Purchases</span>
-                                <input type="text" name="INSTALLMENTS_PURCHASES" class="form-control"
-                                    required="required">
+                                <span class="txtwhite">Purchases</span>
+                                <input type="text" name="PURCHASES" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Cash Advance">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Cash Advanced</span>
-                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required">
+                                <span class="txtwhite">Oneoff purchase</span>
+                                <input type="text" name="ONEOFF_PURCHASES" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Credit Limit">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Credit Limit</span>
-                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required">
+                                <span class="txtwhite">Installment purchase</span>
+                                <input type="text" name="INSTALLMENTS_PURCHASES" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Payment here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Payment</span>
-                                <input type="text" name="PAYMENTS" class="form-control" required="required">
+                                <span class="txtwhite">Cash advance</span>
+                                <input type="text" name="CASH_ADVANCE" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Enter Minimum Payment here">
                             </div>
 
                             <div class="input-group mb-3">
-                                <span>Percent full payment</span>
-                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required">
+                                <span class="txtwhite">Cash advance transaction</span>
+                                <input type="text" name="CASH_ADVANCE_TRX" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
                             </div>
-                            <button type="submit" class="btn btn-primary">Predict</button>
+
+                            <div class="input-group mb-3">
+                                <span class="txtwhite">Purchase transaction</span>
+                                <input type="text" name="PURCHASES_TRX" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="txtwhite">Credit Limit</span>
+                                <input type="text" name="CREDIT_LIMIT" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="txtwhite">Payment</span>
+                                <input type="text" name="PAYMENTS" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="txtwhite">Percent full payment</span>
+                                <input type="text" name="PRC_FULL_PAYMENT" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="txtwhite">Tenure</span>
+                                <input type="text" name="TENURE" class="form-control" required="required"
+                                    style="width: 50px; margin-left: 20px; opacity: 0.5;" placeholder="Percent Full Payment">
+                            </div>
+                            <button type="submit" class="btn btn-primary ">Predict</button>
                         </form>
+                    </div>
+                    <div>
+                        <div class="form-control title">Prediction</div><br>
+                        <div class="txtwhite" style="text-align: justify;">{{output}}</div>
                     </div>
                 </div>
             </div>
