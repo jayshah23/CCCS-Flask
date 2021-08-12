@@ -11,7 +11,7 @@ def welcome():
 @app.route('/model',methods=['POST'])
 def model():
     model1 = pickle.load(open('Model_Jay.pkl', 'rb'))
-    model2 = pickle.load(open('model_JINI.pkl', 'rb'))
+    model2 = pickle.load(open('Model_JINI.pkl', 'rb'))
     
     final_data = [np.array([x for x in request.form.values()])]
     prediction1 = model1.predict([final_data[0][:7]])
