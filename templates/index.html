@@ -44,12 +44,6 @@
 
 <body>
     <header class="bd-header  py-3 d-flex align-items-stretch border-bottom ">
-        <!-- <div class="container-fluid d-flex align-items-center">
-            <h1 style="color:orange;font-size: 30px;;" class="d-flex align-items-center  mb-0">
-                <u>Packt></u>
-            </h1>
-        </div> -->
-        
         <img src="../static/transparent background logo.png" style="height: 15%; width: 10%; padding-left: 15px;">
     </header>
 
@@ -160,11 +154,11 @@
                                 <div class="d-flex justify-content-between">
                                     <strong class="text-gray-dark" style="font-size: 23px;">Model 1</strong>
                                 </div><br>
-                                <span class="d-block" style="font-size: 17px;">{{ prediction1 }}</span><br>
+                                <span class="d-block" style="font-size: 17px;">{{prediction1}}</span><br>
                                 <p style="font-size: 17px; text-align: justify;"><b>Business Insight: </b>{{insight1}}
                                 </p>
                                 <p style="font-size: 17px; text-align: justify;"><b>Business Recommendation:
-                                    </b>{{output1}}</p>
+                                    </b>{{recommendation1}}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -172,11 +166,11 @@
                                 <div class="d-flex justify-content-between">
                                     <strong class="text-gray-dark" style="font-size: 23px;">Model 2</strong>
                                 </div><br>
-                                <span class="d-block" style="font-size: 17px;">{{ prediction2 }}</span><br>
+                                <span class="d-block" style="font-size: 17px;">{{prediction2}}</span><br>
                                 <p style="font-size: 17px; text-align: justify;"><b>Business Insight: </b>{{insight2}}
                                 </p>
                                 <p style="font-size: 17px; text-align: justify;"><b>Business Recommendation:
-                                    </b>{{output2}}</p>
+                                    </b>{{recommendation2}}</p>
                             </div>
                         </div>
                     </div>
@@ -186,11 +180,15 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="text" style="text-align: center;"><h3>Model 1</h3></div>
+                    <div class="text" style="text-align: center;">
+                        <h3>Model 1</h3>
+                    </div>
                     <img src="{{url_for('static', filename='model1.png')}}" class="d-block w-100" alt="Model 1">
                 </div>
                 <div class="carousel-item">
-                    <div class="text" style="text-align: center;"><h3>Model 2</h3></div>
+                    <div class="text" style="text-align: center;">
+                        <h3>Model 2</h3>
+                    </div>
                     <img src="{{url_for('static', filename='model2.png')}}" class="d-block w-100" alt="Model 2">
                 </div>
             </div>
