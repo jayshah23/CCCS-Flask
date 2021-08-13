@@ -17,18 +17,18 @@ def model():
     prediction1 = model1.predict([final_data[0][:7]])
     prediction2 = model2.predict(final_data)
 
-    if (prediction1[0] == 0):
-        insight1 = "These customers should be given schemes accordingly to increase their purchase which will indirectly increase oneoff purchase and installment purchases."
-        recommendation1 = "Customers of cluster 0 have a pretty good credit limit and balance but these customers have a very low oneoff purchase and purchases in comparison to cash advance. This means they take more cash advance and spend less through purchasing."
-    elif (prediction1[0] == 1):
-        insight1 = "These customers have a very low oneoff purchase and cash advance."
-        recommendation1 = "Credit limit of customers of cluster 1 is lowest amongst all. These customers have a low balance but they have quite high purchase and installment purchases."
+    if (prediction1[0] == 1):
+        recommendation1 = "These customers should be given schemes accordingly to increase their purchase which will indirectly increase oneoff purchase and installment purchases."
+        insight1 = "Customers of cluster 1 have a pretty good credit limit and balance but these customers have a very low oneoff purchase and purchases in comparison to cash advance. This means they take more cash advance and spend less through purchasing."
+    elif (prediction1[0] == 0):
+        insight1 = "Credit limit of customers of cluster 0 is lowest amongst all. These customers have a low balance but they have quite good purchase and installment purchases."
+        recommendation1 = "These customers can be given discount offer on buying things so that they will start using their credit card more frequently."
     elif (prediction1[0] == 2):
-        insight1 = "These customers should be encouraged by giving schemes to spend more and to increase the balance by keeping a minimum balance."
-        recommendation1 = "These customers have a good credit limit but their balance, oneoff urchase, purchases, installment purchases is very low."
+        recommendation1 = "These customers should be encouraged by giving schemes to spend more and to increase the balance by keeping a minimum balance."
+        insight1 = "These customers have a good credit limit but their balance, oneoff urchase, purchases, installment purchases is very low."
     elif (prediction1[0] == 3):
-        insight1 = "These customers should be encouraged to keep decent balance in their account by keeping a minimum balance rule."
-        recommendation1 = "These customers have the highest credit limit and oneoff purchase followed by purchases and installment purchases. They have highest payment of all clusters."
+        recommendation1 = "These customers should be encouraged to keep decent balance in their account by keeping a minimum balance rule."
+        insight1 = "These customers have the highest credit limit and oneoff purchase followed by purchases and installment purchases. They have highest payment of all clusters."
     else:
         insight1 = "Error"
         recommendation1 = "Error"
